@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nº</th>
+      <th scope="col">Nombre Almacén</th>
+      <th scope="col">Ubicación</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr th:each="almacen: ${almacenes}">
+      	 <td th:text="${almacen.idalmacenes}">...</td>
+         <td th:text="${almacen.nombre}">...</td>
+         <td th:text="${almacen.ubicacion}">...</td>
+      </tr>
+  </tbody>
+</table>
+</body>
+</html>

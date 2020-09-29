@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+crossorigin="anonymous">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+productos
+<form th:action="@{/productos/selalm}"  method="post">
+<select class="form-control" th:object="${selectedOne}"  th:field= "*{idalmacenes}" >
+      <option th:each= "almacen: ${almacenes}"  th:text= "${almacen.nombre}" th:value= "${almacen.idalmacenes}"></option>
+    </select>
+    <Input type="submit" th:value= "Mostrar">
+</form>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id de producto</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="producto: ${productos}">
+      	 <td th:text="${producto.idproductos}">...</td>
+         <td th:text="${producto.nombre}">...</td>
+         <td th:text="${producto.precioUnitario}">...</td>
+      </tr>
+  </tbody>
+</table>
+</body>
+</html>
